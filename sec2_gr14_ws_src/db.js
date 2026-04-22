@@ -1,5 +1,5 @@
 const { Pool } = require('pg');
-const sqlite3 = require('sqlite3').verbose();
+let sqlite3;
 const path = require('path');
 const fs = require('fs');
 const { open } = require('sqlite');
@@ -109,6 +109,8 @@ function normalizeRows(rows) {
  */
 const initSqlite = async () => {
   if (!dbInstance) {
+    sqlite3 = require('sqlite3').verbose();
+
     const dbPath = path.resolve(__dirname, './data/sec2_gr14_database.sqlite');
     const dir = path.dirname(dbPath);
     if (!fs.existsSync(dir)) {
