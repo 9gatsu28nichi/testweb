@@ -1,0 +1,45 @@
+{
+  "name": "boonsonclon-furniture",
+  "version": "1.0.0",
+  "description": "BoonSonClon Furniture Store - Full Stack Node.js Application",
+  "main": "sec2_gr14_ws_src/server.js",
+  "scripts": {
+    "start": "node sec2_gr14_ws_src/server.js",
+    "dev": "nodemon sec2_gr14_ws_src/server.js",
+    "frontend": "node sec2_gr14_fe_src/frontend-server.js",
+    "frontend:dev": "nodemon sec2_gr14_fe_src/frontend-server.js",
+    "both": "concurrently \"npm run dev\" \"npm run frontend:dev\"",
+    "seed": "node sec2_gr14_ws_src/seed.js",
+    "test": "node test-all-endpoints.js",
+    "test:watch": "nodemon test-all-endpoints.js",
+    "build": "npm install --no-fund --no-audit",
+    "render:start": "npm run seed && node sec2_gr14_ws_src/server.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "connect-pg-simple": "^10.0.0",
+    "connect-sqlite3": "^0.9.16",
+    "cors": "^2.8.6",
+    "dotenv": "^16.6.1",
+    "express": "^4.22.1",
+    "express-session": "^1.19.0",
+    "jsonwebtoken": "^9.0.3",
+    "multer": "^1.4.5-lts.2",
+    "node-fetch": "^2.7.0",
+    "pg": "^8.20.0",
+    "sqlite": "^5.1.1",
+    "sqlite3": "^6.0.1"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "nodemon": "^3.1.14"
+  },
+  "overrides": {
+    "tar": "^7.5.13",
+    "@tootallnate/once": "^3.0.1",
+    "http-proxy-agent": "^7.0.2"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

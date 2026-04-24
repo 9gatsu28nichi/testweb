@@ -1,0 +1,134 @@
+<!--
+  header.html — BoonSonClon Navigation Partial
+  Purpose: Orchestrates the global navigation system, featuring category 
+           discovery, search mechanics, and dynamic account access.
+-->
+
+<div class="site-sale-bar">
+  This weekend sale 20% off on all products
+</div>
+
+<header class="site-header">
+  <div class="site-header__top">
+    <div class="site-header__location">
+      Phutthamonthon,<br>Nakhon Pathom 73170, Thailand
+    </div>
+
+    <div class="site-header__search-group">
+      <div class="site-header__search-box">
+        <select class="site-header__category-select">
+          <option>All Categories</option>
+        </select>
+
+        <div class="site-header__search-input-wrap">
+          <input type="text" class="site-header__search-input" />
+          <i data-lucide="search" class="site-header__search-icon"></i>
+        </div>
+      </div>
+
+      <button class="site-header__search-button">
+        Advanced Search
+      </button>
+    </div>
+
+    <div class="site-header__contact">
+      <i data-lucide="phone" class="site-header__contact-icon"></i>
+      <span class="site-header__contact-number">(928) 630-9272</span>
+    </div>
+  </div>
+
+  <div class="site-header__bottom">
+    <a href="../pages/home" class="site-header__brand" style="text-decoration:none;">
+      <div class="site-header__brand-mark">
+        <span>F</span>
+      </div>
+      <span class="site-header__brand-name">Furniture Store</span>
+    </a>
+
+
+    <nav class="site-header__nav" id="mainNav">
+      <a href="../pages/home" data-page="home" class="nav-link site-header__nav-link">Home</a>
+      <a href="../pages/shop" data-page="shop" class="nav-link site-header__nav-link">Shop</a>
+      <a href="../pages/about-us" data-page="about" class="nav-link site-header__nav-link">About Us</a>
+      <a href="../pages/contact-us" data-page="contact" class="nav-link site-header__nav-link">Contact Us</a>
+
+      <div class="site-header__mobile-only-actions">
+        <div class="site-header__mobile-divider"></div>
+        <a href="../pages/sign-in" class="site-header__mobile-action js-login-btn">
+          <i data-lucide="user"></i>
+          <span>Account</span>
+        </a>
+        <a href="../pages/advance-search" class="site-header__mobile-action">
+          <i data-lucide="search"></i>
+          <span>Advanced Search</span>
+        </a>
+        <a href="../pages/wishlist" class="site-header__mobile-action">
+          <i data-lucide="heart"></i>
+          <span>Wishlist</span>
+          <span class="mobile-wishlist-count is-hidden">0</span>
+        </a>
+        <a href="../pages/admin-login" class="site-header__mobile-action js-admin-access">
+          <i data-lucide="shield"></i>
+          <span>Admin Panel</span>
+        </a>
+        <div class="site-header__mobile-user-menu js-user-menu" style="display:none;">
+          <a href="../pages/my-orders" class="site-header__mobile-action">
+            <i data-lucide="package"></i>
+            <span>My Orders</span>
+          </a>
+          <button class="site-header__mobile-action js-logout-btn" style="width:100%; border:none; background:none; text-align:left; padding:0; cursor:pointer;">
+            <i data-lucide="log-out"></i>
+            <div style="display:flex; flex-direction:column; gap:2px;">
+              <span>Logout</span>
+              <span class="js-user-name" style="font-weight:normal; opacity:0.6; font-size:12px; letter-spacing:0.02em;"></span>
+            </div>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <div class="site-header__actions">
+      <!-- Guest View: Login Button -->
+      <a href="../pages/sign-in" class="site-header__action-link site-header__action-link--desktop js-login-btn" title="Sign In / Account" style="display:flex;align-items:center;color:inherit;">
+        <i data-lucide="user" class="site-header__action-icon"></i>
+      </a>
+
+      <!-- Logged-in View: User Menu (hidden by default) -->
+      <div class="site-header__user-menu site-header__action-link--desktop js-user-menu" style="display:none; align-items:center; gap:16px;">
+        <a href="../pages/my-orders" class="site-header__action-link" title="My Orders" style="display:flex;align-items:center;color:inherit;text-decoration:none;gap:6px;">
+          <i data-lucide="package" style="width:20px; height:20px;"></i>
+          <span style="font-size:14px; font-weight:500;">My Orders</span>
+        </a>
+        <div style="width:1px; height:16px; background:#ddd;"></div>
+        <span class="site-header__user-name js-user-name" style="font-size:14px; font-weight:500;"></span>
+        <button class="site-header__logout-btn js-logout-btn" title="Logout" style="background:none; border:none; cursor:pointer; padding:4px; display:flex; align-items:center; color:inherit;">
+          <i data-lucide="log-out" class="site-header__action-icon" style="width:20px; height:20px;"></i>
+        </button>
+      </div>
+      <a href="../pages/wishlist" class="site-header__action-link site-header__action-link--desktop" title="Wishlist" style="display:flex;align-items:center;color:inherit;">
+        <div class="site-header__wishlist">
+          <i data-lucide="heart" class="site-header__action-icon"></i>
+          <span id="wishlistBadge" class="site-header__cart-badge wishlist-count-badge is-hidden">0</span>
+        </div>
+      </a>
+
+      <a href="../pages/cart" class="site-header__action-link" title="Cart" style="display:flex;align-items:center;color:inherit;">
+        <div class="site-header__cart">
+          <i data-lucide="shopping-bag" class="site-header__action-icon"></i>
+          <span id="cartBadge" class="site-header__cart-badge cart-count-badge is-hidden">0</span>
+        </div>
+      </a>
+
+      <a href="../pages/admin-login" class="site-header__action-link site-header__action-link--desktop js-admin-access" title="Admin Access" style="display:flex;align-items:center;color:inherit;margin-left:12px;">
+        <i data-lucide="shield" class="site-header__action-icon"></i>
+      </a>
+    </div>
+
+    <button class="site-header__burger" id="burgerToggle" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
